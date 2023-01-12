@@ -55,8 +55,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 </nav>
 
+
+
      <!--mainnav-->
-   <nav class="navbar navbar-expand-lg   navbar-light bg-light sticky-top">
+  <nav class="navbar navbar-expand-lg   navbar-light bg-light sticky-top">
     <div class="container">
       <a class="navbar-brand text-primary fw-bold" href="#">PlusTech<span></span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -98,56 +100,16 @@
               </div>        
       </div>
     </div>
-  </nav>
+  </nav> 
 
-
-
-<!--slider-->
-<div class="slider-wrapper owl-carousel owl-theme" id="hero-slider">
-
-  <!--first slider-->
-<div class="slide1 min-vh-100 bg-cover d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="display-3 text-white my-3">Best Skill Institute</h1>
-                <p class="text-white fs-5">Our mission is to provide tractable, feasible and flexible
-                    learning environment <br>to effectively offer simplified learning experience.</p>
-                    <a href="courses.html " class="btn btn-light me-4 rounded-pill text-primary fw-bold bg-white">Get Started</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--secondslider-->
-<div class="slide2 min-vh-100 bg-cover d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="display-3 text-white my-3">The Future Is Yours </h1>
-                <p class="text-white fs-5">To skill up and scale up</p>
-                    <a href="courses.html " class="btn btn-light me-4 rounded-pill text-primary fw-bold bg-white">Get Started</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--thirdslider-->
-<div class="slide3 min-vh-100 bg-cover d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="display-3 text-white my-3">Level Up Today With Us</h1>
-                <p class="text-white fs-5">We offer the opportuniy to learn high income skills</p>
-                    <a href="courses.html " class="btn btn-light me-4 rounded-pill text-primary fw-bold bg-white">Join Us</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-</div>
-
-<!--end of slide-->
+  <section class="curve1">
+    
+   <h1 class="text-white">Best Skill Institute</h1>
+  <p class="text-white">Our mission is to provide tractable, feasible and flexible
+    learning environment <br>to effectively offer simplified learning experience.</p>
+    <div class="curve"></div>
+    <a href="courses.html " class="btn btn-light me-4 rounded-pill text-primary fw-bold bg-white">Get Started</a>
+  </section>
 
 
 
@@ -156,8 +118,8 @@
 <section id="about ">
   <div class="container ">
       <div class="row justify-content-center ">
-          <div class="col-md-6 ">
-              <p class="display-6 fw-bold text-dark">KickStart Your Career</p>
+          <div class="col-md-6 mt-5 pt-5">
+              <p class="display-6 fw-bold text-dark  ">KickStart Your Career</p>
               <p class="display-6 fw-bold text-dark"> With Us </p>
           </div>
           <div class="col-md-6 ">
@@ -195,32 +157,38 @@
 <!--Milestone-->
 
 <section id="milestone" class="bg-cover">
+  
   <p class="fw-bold text-center text-black fs-1  ">Tech Plus At A Glance</p>
 <div class="container">
 <div class="row mx-5">
 
+
+<div class="col-lg-3 text-primary fw-bold mt-3">
+    <div class="display-1 count"  data-target="600">0+</div>
+    <p class="mb-0 fs-5">Study Materials</p>
+  </div>
+
+
+
   <div class="col-lg-3 text-primary fw-bold mt-3 ">
-    <div class="display-1  ">50+</div>
+    <div class="display-1" >50+</div>
     <p class="mb-0 fs-5">Current Enrollment</p>
   </div>
 
 
   <div class="col-lg-3 text-primary fw-bold mt-3">
-    <div class="display-1   ">10+</div>
+    <div class="display-1"    >10+</div>
     <p class="mb-0 fs-5">Qualified Staff</p>
   </div>
 
 
   <div class="col-lg-3 text-primary fw-bold mt-3">
-    <div class="display-1">5+</div>
+    <div class="display-1" >5+</div>
     <p class="mb-0 fs-5">Tech Courses</p>
   </div>
 
 
-  <div class="col-lg-3 text-primary fw-bold mt-3">
-    <div class="display-1">15+</div>
-    <p class="mb-0 fs-5">Study Materials</p>
-  </div>
+  
 
 
 
@@ -745,7 +713,54 @@
 <!-- End of .container -->
 
 
+<script>
+  const counters = document.querySelectorAll('.count')
+  const speed = 300;
 
+  counters.forEach((counter) => {
+    const updateCount = () => {
+      const target = parseInt(counter.getAttribute('data-target'));
+      const count = parseInt(counter.innerText);
+      const increment = Math.trunc(target / speed);
+
+      if (count < target) {
+        counter.innerText = count + increment;
+        setTimeout(updateCount, 1)
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount()
+  })
+
+</script>
+
+<script>
+  const btn2 = document.querySelector("button");
+ const post = document.querySelector(".post");
+ const widget = document.querySelector(".star-widget");
+ const editBtn2 = document.querySelector(".edit");
+
+ btn2.onclick =()=>{
+  widget.style.display=  "none";
+  post.style.display=  "block";
+  return false;
+ }
+
+ editBtn2.onclick =()=>{
+  widget.style.display=  "block";
+  post.style.display=  "none";
+  return false;
+ }
+
+  
+
+ editbtn2.onclick =()=>{
+  widget.style.display=  "none";
+  post.style.display=  "block";
+  return false;
+ }
+</script>
 
 
 
